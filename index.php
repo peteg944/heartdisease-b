@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>Heart Disease Team B</title>
 
     <!-- CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
@@ -21,6 +21,12 @@
   <body>
     <div class="container container-frontpage">
     	<h1>Front page</h1>
+    	
+    	<a id="link-doctor" href="/">Doctors</a>
+    	
+		<a id="link-patient" href="/">Patients</a>
+    	
+		<a id="link-public" href="/">Public</a>
     </div>
     
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

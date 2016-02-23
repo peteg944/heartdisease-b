@@ -1,3 +1,26 @@
+a {
+	font-style: italic;
+}
+
+#link-doctor {
+	color: purple;
+}
+
+#link-patient {
+	color: green;
+}
+
+#link-public {
+	color: black;
+}
+
 .container-frontpage {
 	text-align: center;
+}
+
+.container-frontpage a {
+	background-color:#eee;
+	display: inline-block;
+	font-size: 24pt;
+	padding: 50px;
 }
