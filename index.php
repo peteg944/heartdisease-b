@@ -21,11 +21,8 @@
   <body>
     <div class="container container-frontpage">
     	<h1>Front page</h1>
-    	
-    	<a id="link-doctor" href="/">Doctors</a>
-    	
+		<a id="link-doctor" href="/">Doctors</a>
 		<a id="link-patient" href="/">Patients</a>
-    	
 		<a id="link-public" href="/">Public</a>
     </div>
     
