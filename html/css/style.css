@@ -337,7 +337,8 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 	margin-top: 5em;
 	margin-bottom: 2em;
 }
-.secvice-top-grid-1,.secvice-top-grid-2,.secvice-top-grid-3,.secvice-top-grid-4{
+
+.service {
 /*
 	width:31.3%;
 	float:left;
@@ -347,6 +348,27 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 	padding: 3.3em 1.6em 5em 1.6em;
 	position:relative;
 }
+
+.service > img {
+	border-radius: 75px;
+	float: left;
+	margin: 1.5em 2em 1.5em 0;
+	height: 150px;
+	vertical-align: center;
+	width: 150px;
+}
+.service-alternate {
+	background-color: #f8f8f8;
+}
+.service-alternate > img {
+	float: right;
+	margin: 1em 0 1em 1em;
+}
+
+.service button {
+/* 	margin: 0 0.5em 0.5em 0.5em; */
+}
+
 .secvice-top-grid-4{
 	margin-right:0;
 }
