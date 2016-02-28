@@ -1,26 +1,43 @@
-a {
-	font-style: italic;
-}
-
-#link-doctor {
-	color: purple;
-}
-
-#link-patient {
-	color: green;
-}
-
-#link-public {
-	color: black;
-}
-
-.container-frontpage {
+header {
 	text-align: center;
 }
+.navbar-brand > img { /* override bootstrap */
+	display: inline;
+}
 
-.container-frontpage a {
-	background-color:#eee;
-	display: inline-block;
-	font-size: 24pt;
-	padding: 50px;
+#header-homepage {
+	margin-bottom: 50px;
+}
+
+#header-homepage > .logo {
+	max-width: 25%;
+}
+
+.jumpoff-link, .jumpoff-link:visited, .jumpoff-link:active, .jumpoff-link:link { /*  */
+	background-color: rgba(255,255,255,0.8);
+	border: 1px solid #ccc;
+	border-radius: 6px;
+	color: rgb(51,51,51);
+	display: block;
+	padding: 40px;
+}
+.jumpoff-link:hover {
+	border: 1px solid #c00;
+	text-decoration: none;
+}
+	.jumpoff-link .glyphicon {
+		top: 3px;
+	}
+	.jumpoff-link p {
+		margin-bottom: 0;
+		text-align: center;
+		vertical-align: bottom;
+	}
+
+#jumbotron-homepage {
+	background-image: url(/img/background.jpg);
+	background-position: center center;
+	background-repeat: no-repeat;
+	background-size: cover;
+	margin-top: -20px;
 }
