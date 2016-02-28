@@ -20,17 +20,54 @@
   </head>
   <body>
 	<?php include("include/nav.php"); ?>
-	<div class="container">
-		<div class="jumbotron">
+	<div class="jumbotron" id="jumbotron-aboutpage">
+		<div class="container">
 			<h1>About Us</h1>
-			<p><em>Heart2Heart</em> is a </p>
+			<p>Hey</p>
 		</div>
-		<div class="well">
+	</div>
+	<div class="container-fluid container-fluid-alternate">
+		<div class="container">
 			<h2>What is heart disease?</h2>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 		</div>
-		<div class="well"><h2>How it works</h2>
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+	</div>
+	<div class="container-fluid">
+		<div class="container">
+			<h2>How it works</h2>
+			<p>We use OpenCV. Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+		</div>
+	</div>
+	<div class="container-fluid container-fluid-alternate" id="profilepics">
+		<div class="container">
+			<h2>Team Members</h2>
+			<div class="row">
+				<div class="col-md-2">
+					<div class="thumbnail">
+						<p>sdfjkslfjsdk</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+						<p>Yo</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+						<p>sdjfk</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+						<p>sdjfk</p>
+					</div>
+				</div>
+				<div class="col-md-2">
+					<div class="thumbnail">
+						<p>sdjfk</p>
+					</div>
+				</div>
+			</div>
 		</div>
 	</div>
     <?php include("include/body_bottom.php"); ?>
