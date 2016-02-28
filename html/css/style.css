@@ -702,14 +702,14 @@ a.button img {
 .about-top p {
 	color: #494949;
   font-weight: 300;
-  font-size: 0.965em;
+  font-size: 1.5em;
   line-height: 1.8em;
-  max-width: 810px;
+  /*max-width: 810px;*/
   margin: 0 auto 13px;
   opacity: 0.7;
 }
 .about-top h5 {
-	font-size: 1.11em;
+	font-size: 1.3em;
 	color: #1f3e4f;
 	line-height: 1.6em;
 	margin: 0 auto 13px;
@@ -730,6 +730,7 @@ a.button img {
 	margin-right:4%;
 	float:left;
 	margin-top:2%;
+	background-size: 100%;
 }
 .abt_img2{
 	width:35%;
@@ -737,6 +738,7 @@ a.button img {
 	margin-left:4%;
 	float:left;
 	margin-top:2%;
+	background-size: 100%;
 }
 .abt_img1 img,.abt_img2 img{
 	width:100%;
@@ -756,7 +758,7 @@ a.button img {
 .whyus span {
 	margin-top: 15px;
 	display: inline-block;
-	width: 78px;
+	width: 178px;
 	height: 78px;
 	background: #ffffff;	
 	color: #a6192e;	
@@ -797,8 +799,8 @@ a.button img {
 }
 
 .ch-grid li {
-	width: 250px;
-	height: 250px;
+	width: 150px;
+	height: 150px;
 	display: inline-block;
 	margin: 20px;
 }
@@ -824,17 +826,27 @@ a.button img {
 }
 
 .ch-img-1 { 
-	background-image: url(../images/t1.jpg);
+	background-image: url(../images/animal1.jpg);
+	background-size: 100%;
 }
 
 .ch-img-2 { 
-	background-image: url(../images/t2.jpg);
+	background-image: url(../images/animal6.png);
+	background-size: 100%;
 }
 
 .ch-img-3 { 
-	background-image: url(../images/t3.jpg);
+	background-image: url(../images/animal3.png);
+	background-size: 100%;
 }
-
+.ch-img-4 {
+    background-image: url(../images/animal4.png);
+    background-size: 100%;
+}
+.ch-img-5 {
+    background-image: url(../images/animal7.jpg);
+    background-size: 100%;
+}
 .ch-info {
 	position: absolute;
 	background: rgba(158, 147, 107, 0.7);
@@ -867,7 +879,7 @@ a.button img {
 	color: #fff;
 	text-transform: uppercase;
 	letter-spacing: 2px;
-	font-size: 22px;
+	font-size: 18px;
 	margin: 0 30px;
 	padding: 70px 0 0 0;
 	height: 140px;
@@ -2701,7 +2713,7 @@ span.menu {
 		min-height: 225px;
 		padding: 2em 0 0 0;
 	}
-	.ch-img-1,.ch-img-2,.ch-img-3 {
+	.ch-img-1,.ch-img-2,.ch-img-3,.ch-img-4，.ch-img-5 {
 		background-size: 195px;
 	}
 	.ch-grid li {
@@ -3013,7 +3025,7 @@ span.menu {
 		line-height: 1.7em;
 		margin: 10px 0 0 0;
 	}
-	.ch-img-1, .ch-img-2, .ch-img-3 {
+	.ch-img-1, .ch-img-2, .ch-img-3,.ch-img-4，.ch-img-5 {
 		background-size: 142px;
 	}
 	.ch-grid li {
@@ -3318,7 +3330,7 @@ span.menu {
 		width: 170px;
 		height: 170px;	
 	}
-	.ch-img-1, .ch-img-2, .ch-img-3 {
+	.ch-img-1, .ch-img-2, .ch-img-3，.ch-img-4，.ch-img-5 {
 		background-size: 170px;
 	}
 	.ch-info h4 {
