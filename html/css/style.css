@@ -62,7 +62,8 @@ background:url('../images/medical-563427.jpg') no-repeat;
 .home{
 	float:left;
 	width:7%;
-	background: rgba(158, 147, 107, 0.51);
+/* 	background: rgba(158, 147, 107, 0.51); */
+	background: rgba(115,90,90,0.5);
 	padding: 2.5em 2em;
 }
 span.glyphicon.glyphicon-home {
@@ -169,13 +170,16 @@ i.googlepluse{
 	font-family: 'Oswald', sans-serif;
 }
 .top-menu ul li a:hover{
-	color:#83774A;
+/* 	color:#83774A; */
+	color: rgb(115,90,90);
 }
 .top-menu ul li a.active{
-	color:#83774A;
+	/* color:#83774A; */
+	color: rgb(115,90,90);
 }
 .header-top {
-	background: rgba(115, 110, 73, 0.32);
+/* 	background: rgba(115, 110, 73, 0.32); */
+	background: rgba(115,90,90,0.32);
 	padding: 2em 30px;
 	float: left;
 	width: 92%;
@@ -196,10 +200,18 @@ i.googlepluse{
 	max-width: 25%;
 }
 
+.header-bottom-grid, .header-bottom-grid:active, .header-bottom-grid:visited, .header-bottom-grid:link {
+	color: #222;
+}
+
+.header-bottom-grid:hover {
+	color: #c00;
+	text-decoration: none;
+}
+
 .header-bottom-grid1,.header-bottom-grid2,.header-bottom-grid3,.header-bottom-grid4{
 	border-radius: 6px;
 	border: 1px solid #ddd;
-
 	width:31.3%;
 	float:left;
 	margin-right:2%;
@@ -223,6 +235,7 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 }
 .header-bottom-grid1:hover {
 	border: 1px solid #c00;
+/* 	color: #c00; */
 /* 	background-color: #7B6D44; */
 	transition: 0.3s all;
 	-webkit-transition: 0.3s all;
@@ -328,13 +341,14 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 }
 .header-bottom-grid1 h4,.header-bottom-grid2 h4,.header-bottom-grid3 h4,.header-bottom-grid4 h4{
 /* 	color: #fff; */
-	color: #222;
+/* 	color: #222; */
 	font-size: 2.1em;
 	margin-top:0.7em;
 	font-weight: 300;
 	text-transform: uppercase;
 	line-height: 1.4em;
 }
+
 .header-bottom-grids {
 /* 	margin-top: 25.8em; */
 	margin-top: 5em;
@@ -362,11 +376,12 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 }
 .service-alternate {
 	background-color: #f8f8f8;
+	text-align: right;
 }
-.service-alternate > img {
-	float: right;
-	margin: 1em 0 1em 1em;
-}
+	.service-alternate > img {
+		float: right;
+		margin: 1em 0 1em 1em;
+	}
 
 .service button {
 /* 	margin: 0 0.5em 0.5em 0.5em; */
