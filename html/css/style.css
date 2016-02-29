@@ -11,18 +11,18 @@ body{
 	background:#FFF;
 }
 body a{
-    transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-moz-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
+    transition:0.3s all;
+	-webkit-transition:0.3s all;
+	-moz-transition:0.3s all;
+	-o-transition:0.3s all;
+	-ms-transition:0.3s all;
 }
 input[type="button"],input[type="submit"]{
-	transition:0.5s all;
-	-webkit-transition:0.5s all;
-	-moz-transition:0.5s all;
-	-o-transition:0.5s all;
-	-ms-transition:0.5s all;
+	transition:0.3s all;
+	-webkit-transition:0.3s all;
+	-moz-transition:0.3s all;
+	-o-transition:0.3s all;
+	-ms-transition:0.3s all;
 }
 h1,h2,h3,h4,h5,h6{
 	margin:0;			   
@@ -215,19 +215,20 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 /* 	background:url(../images/doctor-1149150.jpg); */
 	background: url(/img/doctor-blur.jpg);
 	background-size: 100%;	
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 }
 .header-bottom-grid1:hover {
-	background-color: #7B6D44;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
+	border: 1px solid #c00;
+/* 	background-color: #7B6D44; */
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 }
 .header-bottom-grid1:hover span.nw{
 	transform: rotateY(360deg);
@@ -243,19 +244,20 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 /* 	background:url(../images/heart-665186.jpg);	 */
 	background: url(/img/heart-blur.jpg);
 	background-size: 110%;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 }
 .header-bottom-grid2:hover{
-	background:#a6192e;	
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
+	border: 1px solid #c00;
+/* 	background:#a6192e;	 */
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 }
 .header-bottom-grid2:hover span.glyphicon.glyphicon-certificate{
 	transform: rotateY(360deg);
@@ -271,11 +273,11 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 /* 	background:url(../images/child-1111818.jpg); */
 	background: url(/img/statistics-blur.jpg);
 	background-size: 100%;	
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;	
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;	
 }
 .header-bottom-grid3:hover span.glyphicon.glyphicon-tree-deciduous{
 	transform: rotateY(360deg);
@@ -288,29 +290,30 @@ span.glyphicon.glyphicon-leaf,span.nw,span.glyphicon.glyphicon-certificate,span.
 	transition: 0.8s;
 }
 .header-bottom-grid3:hover{
-	background:#decba5;
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;	
+	border: 1px solid #c00;
+/* 	background:#decba5; */
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;	
 }
 .header-bottom-grid4{
 	background:rgba(0, 0, 0, 0.48);	
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 	margin-right:0;
 }
 .header-bottom-grid4:hover{
 	background:#000000;	
-	transition: 0.5s all;
-	-webkit-transition: 0.5s all;
-	-moz-transition: 0.5s all;
-	-o-transition: 0.5s all;
-	-ms-transition: 0.5s all;
+	transition: 0.3s all;
+	-webkit-transition: 0.3s all;
+	-moz-transition: 0.3s all;
+	-o-transition: 0.3s all;
+	-ms-transition: 0.3s all;
 	margin-right:0;
 }
 .header-bottom-grid4:hover span.glyphicon.glyphicon-screenshot{
@@ -1495,10 +1498,10 @@ a.list-group-item:hover, a.list-group-item:focus {
 	border:none;
 	text-decoration: none;
 	outline: 0;
-	-webkit-transition: all 0.5s ease-in-out;
-	-moz-transition: all 0.5s ease-in-out;
-	-o-transition: all 0.5s ease-in-out;
-	transition: all 0.5s ease-in-out;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
     display:inline-block;
     cursor:pointer;
     text-transform:uppercase;
