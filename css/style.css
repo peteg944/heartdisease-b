@@ -1,3 +1,7 @@
+html, body {
+	height: 100%;
+}
+
 header {
 	text-align: center;
 }
@@ -57,4 +61,59 @@ header {
 
 #profilepics img {
 	max-width: 20%;
+}
+
+/** Doctor's tab interface **/
+
+#tabs-interface {
+	position: relative;
+	bottom: 0;
+}
+
+.nav-tabs a, .nav-tabs a:link, .nav-tabs a:visited, .nav-tabs a:hover {
+	color: #c00;
+}
+
+/* Patients tab */
+.list-group-item.active, .list-group-item.active:focus, .list-group-item.active:hover {
+	/* change blue color to red color for list of patients */
+	background-color: #c00;
+	border-color: #c00;
+}
+
+#tab-patients {
+
+}
+
+#tab-patients > .row {
+	margin-left: 0;
+	margin-right: 0;
+}
+
+#tab-patients .list-group {
+	
+}
+	#tab-patients .list-group-item:first-child {
+		border-top: 0;
+		border-radius: 0;
+	}
+
+#tab-patients .patient h2 {
+	border-bottom: 1px solid #eee;
+	padding-bottom: 10px;
+}	
+#tab-patients .patient h2 > img  { /* information for each patient on the doctor page */
+/* 	border-radius: 1.75em; */
+	height: 1.75em;
+	margin-right: 14px;
+	width: 1.75em;
+	vertical-align: sub;
+}
+
+/* Profile tab */
+#tab-profile h2 > img {
+	border-radius: 1.75em;
+	height: 1.75em; /* match height of text */
+	margin-left: 14px;
+	vertical-align: middle;
 }
