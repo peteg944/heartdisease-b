@@ -46,16 +46,16 @@
 							<!-- use php here -->
 							<?php
 								$patients = array(
-											array("name"=>"George Papadopoulos", "lastseen"=>"Yesterday", "dob"=>"Sep 15, 1970"),
-											array("name"=>"Jane Doe", "lastseen"=>"Mar 13", "dob"=>"Oct 24, 1984"),
-											array("name"=>"Jane Schmoe", "lastseen"=>"Jan 2", "dob"=>"Sep 15, 1985"),
-											array("name"=>"Joe Schmoe", "lastseen"=>"Jan 2", "dob"=>"Jan 15, 1947"),
-											array("name"=>"Joe Doe", "lastseen"=>"Dec 14", "dob"=>"Feb 15, 1957"),
-											array("name"=>"Lo Doe", "lastseen"=>"Dec 13", "dob"=>"Mar 15, 1967"),
+											array("name"=>"George Papadopoulos", "lastseen"=>"Yesterday", "dob"=>"Sep 15, 1970","gender"=>"Male"),
+											array("name"=>"Jane Doe", "lastseen"=>"Mar 13", "dob"=>"Oct 24, 1984","gender"=>"Female"),
+											array("name"=>"Jane Schmoe", "lastseen"=>"Jan 2", "dob"=>"Sep 15, 1985","gender"=>"Female"),
+											array("name"=>"Joe Schmoe", "lastseen"=>"Jan 2", "dob"=>"Jan 15, 1947","gender"=>"Male"),
+											array("name"=>"Joe Doe", "lastseen"=>"Dec 14", "dob"=>"Feb 15, 1957","gender"=>"Male"),
+											array("name"=>"Lo Doe", "lastseen"=>"Dec 13", "dob"=>"Mar 15, 1967","gender"=>"Male"),/*
 											array("name"=>"Joe Roe", "lastseen"=>"Nov 27", "dob"=>"Apr 15, 1894"),
 											array("name"=>"Do Joe", "lastseen"=>"Nov 26", "dob"=>"May 15, 1992"),
 											array("name"=>"Joe Joe", "lastseen"=>"Nov 25", "dob"=>"Jun 15, 2000"),
-											array("name"=>"Jane Joe", "lastseen"=>"Nov 24", "dob"=>"Jul 15, 1952")
+											array("name"=>"Jane Joe", "lastseen"=>"Nov 24", "dob"=>"Jul 15, 1952")*/
 											);
 								
 								$active_patient = -1;
@@ -88,9 +88,27 @@
 									else if($active_patient >= 0)
 									{
 										$patient = $patients[$active_patient];
-										echo "<h2><img src=\"/img/gray.png\">".$patient['name']."</h2>";
+										echo "<h2><img src=\"/img/gray.png\">".$patient['name']."</h2>\n";
+										echo "<div class=\"row\">\n";
+										echo "<div class=\"col-xs-12 col-md-6\">\n";
+										echo "	<table class=\"table\">\n";
+										echo "		<tr><td>Date of birth:</td><td>".$patient['dob']."</td></tr>\n";
+										echo "		<tr><td>Gender:</td><td>".$patient['gender']."</td></tr>\n";
+										echo "		<tr><td>Phone number:</td><td>"."978-800-6170"."</td></tr>\n";
+										echo "		<tr><td>Home address:</td><td>"."600 Beacon Street, Boston, MA 02215"."</td></tr>\n";
+										echo "	</table>\n";
+										echo "</div>\n";
+										echo "</div>\n";
 									}
 								?>
+								<div class="row"> <!-- upload file -->
+									<div class="col-xs-12 col-md-6">
+										<h4>Upload a DICOM file</h4>
+										<form action="upload.php" class="dropzone" id="imageUpload">
+											<span class="dz-message">Drop DICOM file here!</span>
+										</form>
+									</div>
+								</div>
 							</div>
 						</div> <!-- patient info -->
 					</div> <!-- end row -->
@@ -105,6 +123,7 @@
 		</div> <!-- tabs-interface -->
   	</div>
     <?php include("include/body_bottom.php"); ?>
+    <script src="/js/dropzone.js"></script>
     <script>
     	// Tabs
     	$('#tabs-interface a').click(function(e) {

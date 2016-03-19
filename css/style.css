@@ -97,17 +97,35 @@ header {
 		border-top: 0;
 		border-radius: 0;
 	}
+	
+	#tab-patients .patient > .row {
+		margin-left: 0;
+		margin-right: 0;
+	}
 
-#tab-patients .patient h2 {
-	border-bottom: 1px solid #eee;
-	padding-bottom: 10px;
-}	
-#tab-patients .patient h2 > img  { /* information for each patient on the doctor page */
-/* 	border-radius: 1.75em; */
-	height: 1.75em;
-	margin-right: 14px;
-	width: 1.75em;
-	vertical-align: sub;
+	#tab-patients .patient h2 {
+		border-bottom: 1px solid #eee;
+		padding-bottom: 10px;
+	}	
+	#tab-patients .patient h2 > img  { /* information for each patient on the doctor page */
+	/* 	border-radius: 1.75em; */
+		height: 1.75em;
+		margin-right: 14px;
+		width: 1.75em;
+		vertical-align: sub;
+	}
+	
+	#tab-patients .patient table tr:first-child td { /* td's of the first row of the table */
+		border-top: 0;
+	}
+	#tab-patients .patient table tr td:first-child { /* right-align the table labels */
+		text-align: right;
+	}
+	
+.dropzone {
+  border: 2px dashed black;
+  padding: 3em 2em;
+  text-align: center;
 }
 
 /* Profile tab */
