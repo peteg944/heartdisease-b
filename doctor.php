@@ -33,11 +33,11 @@
 						<span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Your Profile
 					</a>
 				</li>
-				<li>
+				<!--<li>
 					<a href="#tab-prefs" role="tab" data-toggle="tab">
 						<span class="glyphicon glyphicon-cog" aria-hidden="true"></span>&nbsp;Preferences
 					</a>
-				</li>
+				</li>-->
 	  		</ul>
 	  		<div class="tab-content">
 		  		<div class="tab-pane fade in active" id="tab-patients" role="tabpanel">
@@ -84,31 +84,41 @@
 							<div class="patient">
 								<?php
 									if($active_patient == -1)
-										echo "<h2>Select a patient</h2>";
+										echo <<<"HTML"
+										<h3 class="action-message"><span class="glyphicon glyphicon-hand-left"></span>&nbsp;Select a patient on the left</h3>
+HTML;
 									else if($active_patient >= 0)
 									{
 										$patient = $patients[$active_patient];
-										echo "<h2><img src=\"/img/gray.png\">".$patient['name']."</h2>\n";
-										echo "<div class=\"row\">\n";
-										echo "<div class=\"col-xs-12 col-md-6\">\n";
-										echo "	<table class=\"table\">\n";
-										echo "		<tr><td>Date of birth:</td><td>".$patient['dob']."</td></tr>\n";
-										echo "		<tr><td>Gender:</td><td>".$patient['gender']."</td></tr>\n";
-										echo "		<tr><td>Phone number:</td><td>"."978-800-6170"."</td></tr>\n";
-										echo "		<tr><td>Home address:</td><td>"."600 Beacon Street, Boston, MA 02215"."</td></tr>\n";
-										echo "	</table>\n";
-										echo "</div>\n";
-										echo "</div>\n";
+										
+										// Patient information
+										echo <<<"HTML"
+										<h2><img src="/img/gray.png">{$patient['name']}</h2>
+										<div class="row">
+											<div class="col-xs-12 col-md-6">
+												<table class="table">
+													<tr><td>Date of birth:</td><td>{$patient['dob']}</td></tr>
+													<tr><td>Gender:</td><td>{$patient['gender']}</td></tr>
+													<tr><td>Phone number:</td><td>978-800-6170</td></tr>
+													<tr><td>Home address:</td><td>600 Beacon Street, Boston, MA 02215</td></tr>
+												</table>
+											</div>
+										</div>
+HTML;
+										
+										// Upload / view video results
+										echo <<<"HTML"
+										<div class="row"><!-- upload file -->
+											<div class="col-xs-12 col-md-6">
+												<h4>Upload a DICOM file</h4>
+												<form action="upload.php" class="dropzone" id="imageUpload">
+													<span class="dz-message">Drop DICOM file here!</span>
+												</form>
+											</div>
+										</div>
+HTML;
 									}
 								?>
-								<div class="row"> <!-- upload file -->
-									<div class="col-xs-12 col-md-6">
-										<h4>Upload a DICOM file</h4>
-										<form action="upload.php" class="dropzone" id="imageUpload">
-											<span class="dz-message">Drop DICOM file here!</span>
-										</form>
-									</div>
-								</div>
 							</div>
 						</div> <!-- patient info -->
 					</div> <!-- end row -->
@@ -116,9 +126,9 @@
 				<div class="tab-pane fade" id="tab-profile" role="tabpanel">
 					<h2>Jane Doe<img src="/img/gray.png" alt="Portrait"></h2>
 				</div>
-				<div class="tab-pane fade" id="tab-prefs" role="tabpanel">
+				<!--<div class="tab-pane fade" id="tab-prefs" role="tabpanel">
 					prefs
-				</div>
+				</div>-->
 			</div>
 		</div> <!-- tabs-interface -->
   	</div>

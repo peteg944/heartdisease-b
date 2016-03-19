@@ -63,6 +63,12 @@ header {
 	max-width: 20%;
 }
 
+.action-message {
+	font-weight: normal;
+	margin-top: 25%;
+	text-align: center;
+}
+
 /** Doctor's tab interface **/
 
 #tabs-interface {
@@ -123,7 +129,7 @@ header {
 	}
 	
 .dropzone {
-  border: 2px dashed black;
+  border: 1px dashed black;
   padding: 3em 2em;
   text-align: center;
 }
