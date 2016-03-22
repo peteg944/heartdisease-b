@@ -1,5 +1,19 @@
-html, body {
-	height: 100%;
+/* Default button color -> red */
+.btn-primary,
+.btn-primary:focus {
+	background-color: #c00;
+	border-color: #a90000;
+}
+.btn-primary:active,
+.btn-primary:active:hover,
+.btn-primary:active:focus {
+	color: #e2e2e2;
+	background-color: #900;
+	border-color: #800;
+}
+.btn-primary:hover {
+	background-color: #a00;
+	border-color: #900;
 }
 
 header {
@@ -71,11 +85,6 @@ header {
 
 /** Doctor's tab interface **/
 
-#tabs-interface {
-	position: relative;
-	bottom: 0;
-}
-
 .nav-tabs a, .nav-tabs a:link, .nav-tabs a:visited, .nav-tabs a:hover {
 	color: #c00;
 }
@@ -87,18 +96,10 @@ header {
 	border-color: #c00;
 }
 
-#tab-patients {
-
-}
-
-#tab-patients > .row {
-	margin-left: 0;
-	margin-right: 0;
-}
-
-#tab-patients .list-group {
-	
-}
+	#tab-patients .list-group { /* patient selector */
+		max-height: 80vh; /* 80% of viewport height */
+		overflow-y: scroll;
+	}
 	#tab-patients .list-group-item:first-child {
 		border-top: 0;
 		border-radius: 0;
@@ -114,7 +115,6 @@ header {
 		padding-bottom: 10px;
 	}	
 	#tab-patients .patient h2 > img  { /* information for each patient on the doctor page */
-	/* 	border-radius: 1.75em; */
 		height: 1.75em;
 		margin-right: 14px;
 		width: 1.75em;

@@ -10,7 +10,6 @@
     <!-- CSS -->
     <link href="/css/bootstrap.min.css" rel="stylesheet">
     <link href="/css/style.css" rel="stylesheet">
-    <link href="/css/jquery-ui.min.css" rel="stylesheet">
     
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
@@ -29,17 +28,17 @@
 	  	</header>
 	  	<div class="container" id="container-jumpoff">
 	  		<div class="row">
-				<div class="col-md-4">
-					<a href="/doctor.php" class="jumpoff-link">
+				<div class="col-xs-12 col-md-4">
+					<a href="/doctor" class="jumpoff-link">
 						<p><span class="glyphicon glyphicon-heart" aria-hidden="true"></span>&nbsp;Doctors &raquo;</p>
 					</a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-md-4">
 					<a href="/patient.php" class="jumpoff-link">
 						<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Patients &raquo;</p>
 					</a>
 				</div>
-				<div class="col-md-4">
+				<div class="col-xs-12 col-md-4">
 					<a href="/public.php" class="jumpoff-link">
 						<p><span class="glyphicon glyphicon-stats" aria-hidden="true"></span>&nbsp;Public &raquo;</p>
 					</a>
