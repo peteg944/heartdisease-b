@@ -1,22 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Heart2Heart</title>
-
-    <!-- CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-	
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
+    <?php include('../include/head.php'); ?>
+	<title>View Patients - Heart2Heart</title>
   </head>
   <body>
     <?php include("../include/nav.php"); ?>
@@ -33,46 +19,42 @@
 	  		<div class="row">
 	  			<div class="col-xs-12 col-s-3 col-md-3">
 					<div class="list-group">
-						<!-- use php here -->
 						<?php
-							$patients = array(
-										array("name"=>"George Papadopoulos","lastseen"=>"Yesterday","dob"=>"Sep 15, 1970","gender"=>"Male"),
-										array("name"=>"Jane Doe","lastseen"=>"Mar 13","dob"=>"Oct 24, 1984","gender"=>"Female"),
-										array("name"=>"Jane Schmoe","lastseen"=>"Jan 2","dob"=>"Sep 15, 1985","gender"=>"Female"),
-										array("name"=>"Joe Schmoe","lastseen"=>"Jan 2","dob"=>"Jan 15, 1947","gender"=>"Male"),
-										array("name"=>"Joe Doe","lastseen"=>"Dec 14","dob"=>"Feb 15, 1957","gender"=>"Male"),
-										array("name"=>"Lo Doe","lastseen"=>"Dec 13","dob"=>"Mar 15, 1967","gender"=>"Male")/*,
-										array("name"=>"Joe Roe", "lastseen"=>"Nov 27", "dob"=>"Apr 15, 1894"),
-										array("name"=>"Do Joe", "lastseen"=>"Nov 26", "dob"=>"May 15, 1992"),
-										array("name"=>"Joe Joe", "lastseen"=>"Nov 25", "dob"=>"Jun 15, 2000"),
-										array("name"=>"Jane Joe", "lastseen"=>"Nov 24", "dob"=>"Jul 15, 1952")*/
-										);
+							include('../include/db.php');
 							
-							$patient_param = $_GET['p'];
-							$active_patient = -1;
-							if(isset($patient_param))
+							// Global data
+							$months = array("January","February","March","April","May","June","July",
+											"August","September","October","November","December");
+							
+							// Load patients from DB
+							$conn = connectToDB();
+							if($conn == FALSE)
+								die('Could not connect to the database. Uh oh.\n');
+							
+							$patients = $conn->query('SELECT * FROM patients ORDER BY lastname');
+							
+							$patientParam = $_GET['p'];
+							$activePatient = -1;
+							if(isset($patientParam))
 							{
-								if(is_numeric($patient_param))
-									$active_patient = $_GET['p'];
-								else if($patient_param == "add")
-									$active_patient = -2;
+								if(is_numeric($patientParam))
+									$activePatient = $_GET['p'];
+								else if($patientParam == "add")
+									$activePatient = -2;
 							}
 							
-							$count = 0;
+							// Output the patients list
 							foreach($patients as $patient)
 							{
-								echo "<a class=\"list-group-item";
-								if($count == $active_patient)
-									echo " active";
-								echo "\" ";
-								echo "href=\"?p=$count\"";
-								echo ">\n";
+								echo '<a class="list-group-item';
+								if($patient['patient_id'] == $activePatient)
+									echo ' active';
+								echo '" ';
+								echo 'href="?p='.$patient['patient_id'];
+								echo '">';
 								
-								echo "	<h4>".$patient['name']."</h4>\n";
-								echo "	<p>Last seen: ".$patient['lastseen']."</p>\n";
-								echo "</a>\n";
-								
-								$count++;
+								echo '	<h4>'.$patient['lastname'].', '.$patient['firstname'].'</h4>';
+								echo '</a>';
 							}
 						?>
 					</div> <!-- patient selector -->
@@ -86,46 +68,104 @@
 				<div class="col-xs-12 col-s-9 col-md-9">
 					<div class="patient">
 						<?php
-							if($active_patient == -1) // none selected
+							if($activePatient == -1) // none selected
 							{
 								echo <<<"HTML"
 								<h3 class="action-message"><span class="glyphicon glyphicon-hand-left"></span>&nbsp;Select a patient on the left</h3>
 HTML;
 							}
-							else if($active_patient == -2) // add new patient
+							else if($activePatient == -2) // add new patient
 							{
 								echo <<<"HTML"
 								<h3>Add a New Patient</h3>
-								<form class="form-horizontal">
+								<form class="form-horizontal" method="post" action="add.php">
 									<div class="form-group">
 										<label for="firstName" class="control-label col-sm-2">First name</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="firstName" placeholder="e.g. Jane">
+											<input type="text" class="form-control" id="firstname" name="firstname" placeholder="e.g. Jane">
 										</div>
 									</div>
 									<div class="form-group">
 										<label for="lastName" class="control-label col-sm-2">Last name</label>
 										<div class="col-sm-6">
-											<input type="text" class="form-control" id="lastName" placeholder="e.g. Doe">
+											<input type="text" class="form-control" id="lastname" name="lastname" placeholder="e.g. Doe">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="dateOfBirth" class="control-label col-sm-2">Date of birth</label>
+										<div class="col-sm-2">
+											<select class="form-control" id="dob_month" name="dob_month">
+HTML;
+											// Generate months for select control
+											for($i = 0; $i < count($months); $i++)
+												echo '<option value="'.$i.'">'.$months[$i].'</option>\n';
+											
+											echo <<<"HTML"
+											</select>
+										</div>
+										<div class="col-sm-2">
+											<input type="number" class="form-control" id="dob_day" name="dob_day" placeholder="Day">
+										</div>
+										<div class="col-sm-2">
+											<input type="number" class="form-control" id="dob_year" name="dob_year" placeholder="Year">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="address" class="control-label col-sm-2">Address</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="address" name="address" placeholder="100 Bay State Road, Boston, MA 02215">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="phone" class="control-label col-sm-2">Phone number</label>
+										<div class="col-sm-6">
+											<input type="text" class="form-control" id="phone" name="phone" placeholder="978-617-7810">
+										</div>
+									</div>
+									<div class="form-group">
+										<label for="gender" class="control-label col-sm-2">Gender</label>
+										<div class="col-sm-2">
+											<select class="form-control" id="gender" name="gender">
+												<option>Female</option>
+												<option>Male</option>
+											</select>
+										</div>
+									</div>
+									<div class="row">
+										<div class="col-sm-offset-2">
+											<input type="hidden" name="doctor_id" value="0">
+											<button type="submit" class="btn btn-primary">Submit Patient</button>
+											<a href="/doctor"><button type="button" class="btn btn-link">Cancel</button></a>
 										</div>
 									</div>
 								</form>
 HTML;
 							}
-							else if($active_patient >= 0)
+							else if($activePatient >= 0) // Get info for this patient
 							{
-								$patient = $patients[$active_patient];
+								$patientQuery = $conn->prepare('SELECT * FROM patients WHERE `patient_id`=:patient_id LIMIT 1');
+								$patientQuery->bindValue(':patient_id', $activePatient);
+								$patientQuery->execute();
+								$patient = $patientQuery->fetch(); // Fetch a row (the only row)
+								
+								if($patient == FALSE)
+									echo "Could not retrieve this patient, sorry.\n";
 								
 								// Patient information
+								$name = $patient['firstname'].' '.$patient['lastname'];
+								$dob = $months[$patient['dob_month']].' '.$patient['dob_day'].', '.$patient['dob_year'];
+								$gender = $patient['gender'];
+								$phone = $patient['phone'];
+								$address = $patient['address'];
 								echo <<<"HTML"
-								<h2><img src="/img/person-placeholder.png">{$patient['name']}</h2>
+								<h2><img src="/img/person-placeholder.png">{$name}</h2>
 								<div class="row">
 									<div class="col-xs-12 col-s-6 col-md-6">
 										<table class="table">
-											<tr><td>Date of birth:</td><td>{$patient['dob']}</td></tr>
-											<tr><td>Gender:</td><td>{$patient['gender']}</td></tr>
-											<tr><td>Phone number:</td><td>978-800-6170</td></tr>
-											<tr><td>Home address:</td><td>600 Beacon Street, Boston, MA 02215</td></tr>
+											<tr><td>Date of birth:</td><td>{$dob}</td></tr>
+											<tr><td>Gender:</td><td>{$gender}</td></tr>
+											<tr><td>Phone number:</td><td>{$phone}</td></tr>
+											<tr><td>Home address:</td><td>{$address}</td></tr>
 										</table>
 									</div>
 								</div>
@@ -142,11 +182,6 @@ HTML;
 									</div>
 								</div>
 HTML;
-							}
-							
-							else if($active_patient == "add")
-							{
-								echo "<h2>add patient</h2>\n";
 							}
 						?>
 					</div>

@@ -1,24 +1,11 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Doctor Center - Heart2Heart</title>
-	
-    <!-- CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-    
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
-  <body>
+<head>
+	<?php include('include/head.php'); ?>
+	<title>Heart2Heart</title>
+	<link href="http://fonts.googleapis.com/css?family=Oswald:400,300,700" rel="stylesheet" type="text/css">
+</head>
+<body id="body-homepage">
     <?php include("include/nav.php"); ?>
   	<div class="jumbotron" id="jumbotron-homepage">
   		<header class="container" id="header-homepage">
@@ -46,6 +33,27 @@
 	      </div>
 	  	</div>
 	</div>
+	<div class="container">
+		<div class="service">
+			<img src="/img/doctor-2.jpg" alt="Doc">
+			<h3>Dr. Smith, Cardiologist</h3>
+			<p>I've been working in cardiology for many years. Calculating the end-diastolic and end-systolic volumes of the left ventricle of the heart from a cardiac MRI has always been a tedious job for cardiologists. One of my colleagues referred me to <em>Heart2Heart</em>, a website that can help us solve this problem and save a lot of time. It also provides an area for patients to see their information and contact their doctors. Answering patients' questions in H2H has been a pleasurable experience. Highly recommend.&nbsp;&nbsp;<a href="/doctor" class="btn btn-default">Upload your MRIs &raquo;</a></p>
+		</div>
+		<div class="service service-alternate">
+			<img src="/img/patient.jpg" alt="Patient">
+			<h3>George Papadopoulos, diagnosed with heart disease 1 month ago</h3>
+			<p>Several weeks ago I felt pain in my chest. Even with my leg problem, I had to go all the way to the nearest hospital to get pictures taken of my heart, which the local doctor called MRI. However, I can get more information only if I go to the downtown hospital which is so far away for the disabled like me. Fortunately, I searched on the internet and found the <em>Heart2Heart</em> website. On this site I can upload my MRI from my own home and  medical professionals will give me advice. Thank god for this website, I am very grateful.&nbsp;&nbsp;<a href="/patient" class="btn btn-default">View your MRI results &raquo;</a>
+			</p>
+		</div>
+		<div class="service">
+			<img src="/img/classroom.jpg" alt="Research">
+			<h3>Jane Doe, statistics student at Boston University </h3>
+			<p>I am a statistics student at Boston University and my professor, Osama, has given me a project where I have to create a report on the relationship between left ventricle heart volume and heart disease. Osama is a good professor and every student loves him so much. But, oh my gosh, this topic is so medical and do I really have to go to every hospital in Boston to ask them for heart disease data? When I had packed all of my things and was ready to start my "hospital trip", I received an advertisement email from the <em>Heart2Heart</em> website and surprisingly found that they have all the data I need! <em>Heart2Heart</em> saved me a lot of time and is very convenient for classifying the data I need. I have finished my project and got an A from Prof. Osama so I want to show my thanks to <em>H2H</em> again. Useful website!&nbsp;&nbsp;<a class="btn btn-default">Download our public data &raquo;</a>
+			</p>
+		</div>
+		<div class="clearfix"></div>
+	</div>
+	</div>
     <?php include("include/body_bottom.php"); ?>
-  </body>
+</body>
 </html>
