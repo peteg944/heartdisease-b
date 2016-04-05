@@ -12,7 +12,7 @@
     		<div id="navbar" class="navbar-collapse collapse">
 	            <ul class="nav navbar-nav">
 	            	<li><a href="/doctor">Doctors</a></li>
-					<li><a href="/patient.php">Patients</a></li>
+					<li><a href="/patients/profile.php">Patients</a></li>
 					<li><a href="/public.php">Public</a></li>
 					<li><a href="/introduction.php">About Us</a></li>
 				</ul>

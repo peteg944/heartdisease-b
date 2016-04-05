@@ -335,7 +335,7 @@ header {
 
 #tab-patients .patient > .row {
 	margin-left: 0;
-	margin-right: 0;
+	margin-right: 0px;
 }
 
 #tab-patients .patient h2 {
@@ -377,4 +377,14 @@ header {
 }
 .services {
 	background: #f0f0f0;
+}
+.row1{
+    margin-left:60px;
+}
+.col-xs-121{
+    width:23.8%;
+    margin-left:70px;
+}
+.col-xs-122{
+    width:60%;
 }
