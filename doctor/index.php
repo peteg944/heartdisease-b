@@ -1,3 +1,11 @@
+<?php
+include('../include/top.php');
+if(!$user->isLoggedIn())
+{
+	header('Location: /html/login.html');
+	die('You need to login first.');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -20,8 +28,6 @@
 	  			<div class="col-xs-12 col-s-3 col-md-3">
 					<div class="list-group">
 						<?php
-							include('../include/db.php');
-							
 							// Global data
 							$months = array("January","February","March","April","May","June","July",
 											"August","September","October","November","December");

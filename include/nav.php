@@ -16,6 +16,14 @@
 					<li><a href="/public.php">Public</a></li>
 					<li><a href="/introduction.php">About Us</a></li>
 				</ul>
+				<p class="navbar-text navbar-right">
+					<?php
+						if($user->isLoggedIn())
+							echo '<strong><a href="/logout.php">Logged in</a></strong>';
+						else
+							echo '<strong>Not logged in</strong>';
+					?>
+				</p>
 			</div><!--/.nav-collapse -->
     	</div>
     </nav>
