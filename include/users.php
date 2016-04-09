@@ -29,7 +29,7 @@ class User
 	public function login($username, $password)
 	{
 		// Check if already logged in
-		if(self::isLoggedIn())
+		if($this->isLoggedIn())
 			return TRUE;
 		
 		// Look up this username in the database
@@ -60,6 +60,7 @@ class User
 	// Log out, get rid of the session
 	public function logout()
 	{
+		unset($_SESSION[PROP_LOGGED_IN]);
 		return session_destroy();
 	}
 	
