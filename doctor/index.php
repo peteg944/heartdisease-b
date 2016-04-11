@@ -37,7 +37,7 @@ if(!$user->isLoggedIn())
 							if($conn == FALSE)
 								die('Could not connect to the database. Uh oh.\n');
 							
-							$patients = $conn->query('SELECT * FROM patients ORDER BY lastname');
+							$patients = $conn->query('SELECT * FROM patient_data ORDER BY lastname');
 							
 							$patientParam = $_GET['p'];
 							$activePatient = -1;
@@ -53,10 +53,10 @@ if(!$user->isLoggedIn())
 							foreach($patients as $patient)
 							{
 								echo '<a class="list-group-item';
-								if($patient['patient_id'] == $activePatient)
+								if($patient['id'] == $activePatient)
 									echo ' active';
 								echo '" ';
-								echo 'href="?p='.$patient['patient_id'];
+								echo 'href="?p='.$patient['id'];
 								echo '">';
 								
 								echo '	<h4>'.$patient['lastname'].', '.$patient['firstname'].'</h4>';
@@ -149,8 +149,8 @@ HTML;
 							}
 							else if($activePatient >= 0) // Get info for this patient
 							{
-								$patientQuery = $conn->prepare('SELECT * FROM patients WHERE `patient_id`=:patient_id LIMIT 1');
-								$patientQuery->bindValue(':patient_id', $activePatient);
+								$patientQuery = $conn->prepare('SELECT * FROM patient_data WHERE `id`=:id LIMIT 1');
+								$patientQuery->bindValue(':id', $activePatient);
 								$patientQuery->execute();
 								$patient = $patientQuery->fetch(); // Fetch a row (the only row)
 								

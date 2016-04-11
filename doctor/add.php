@@ -9,7 +9,7 @@ if($conn == FALSE)
 	die('Could not connect to the database. Uh oh.\n');
 
 // Set up INSERT statement
-$insertCols = "INSERT INTO patients (`doctor_id`, `firstname`, `lastname`, `dob_month`, `dob_day`, `dob_year`, `phone`, `address`, `gender`)";
+$insertCols = "INSERT INTO patient_data (`doctor_id`, `firstname`, `lastname`, `dob_month`, `dob_day`, `dob_year`, `phone`, `address`, `gender`)";
 $insertVals = "VALUES(:doctor_id, :firstname, :lastname, :dob_month, :dob_day, :dob_year, :phone, :address, :gender)";
 $insertQuery = $conn->prepare($insertCols.' '.$insertVals);
 $insertQuery->bindValue(':doctor_id', $_POST['doctor_id']);

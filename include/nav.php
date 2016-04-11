@@ -17,13 +17,12 @@
 					<li><a href="/introduction.php">About Us</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown">
 					<?php
-						// Dropdown menu
-						echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
-						
 						if($user->isLoggedIn())
 						{
+							// Dropdown menu
+							echo '<li class="dropdown">';
+							echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
 							echo 'Hello '.$user->username().' <span class="caret"></span>'; // the text of the dropdown menu
 							echo '</a>';
 							
@@ -31,20 +30,23 @@
 							echo '<ul class="dropdown-menu">';
 							echo '<li><a href="/logout.php">Log out</a></li>';
 							echo '</ul>';
+							echo '</li>';
 						}
 						else
 						{
-							echo 'Log in&#8230; <span class="caret"></span>';
+							echo '<li>';
+							echo '<a href="/html/login.html">Log in</a>';
+							echo '</li>';
+							/*echo 'Log in&#8230; <span class="caret"></span>';
 							echo '</a>';
 							
 							// The contents of the dropdown
 							echo '<ul class="dropdown-menu">';
 							echo '<li><a href="/doctor">as a doctor</a></li>';
 							echo '<li><a href="/patient">as a patient</a></li>';
-							echo '</ul>';
+							echo '</ul>'; */
 						}
 					?>
-					</li>
 				</p>
 			</div><!--/.nav-collapse -->
     	</div>

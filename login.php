@@ -10,7 +10,7 @@ if(isset($username) && isset($password))
 {
 	if($user->login($username, $password))
 	{
-		header('Location: /doctor/');
+		header('Location: /');
 		die('Logged in');
 	}
 	else
