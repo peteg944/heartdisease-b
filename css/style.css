@@ -363,7 +363,8 @@ header {
 }
 	
 .dropzone {
-  border: 1px dashed black;
+  border: 1px dashed #c00;
+  border-radius: 6px;
   padding: 3em 2em;
   text-align: center;
 }
