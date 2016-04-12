@@ -37,7 +37,7 @@ if(!$user->isLoggedIn())
 							if($conn == FALSE)
 								die('Could not connect to the database. Uh oh.\n');
 							
-							$patients = $conn->query('SELECT * FROM patient_data ORDER BY lastname');
+							$patients = $conn->query("SELECT * FROM patient_data WHERE `doctor_id`={$user->doctorID()} ORDER BY lastname");
 							
 							$patientParam = $_GET['p'];
 							$activePatient = -1;

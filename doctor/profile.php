@@ -26,7 +26,7 @@
   			<li role="presentation">
   				<a href="/doctor">
   					<span class="glyphicon glyphicon-th-list"></span>&nbsp;Patient Management
-					</a>
+				</a>
 			</li>
 			<li class="active" role="presentation">
 				<a href="/doctor/profile.php">
@@ -34,6 +34,27 @@
 				</a>
 			</li>
   		</ul>
+  		<?php
+  			// Retrieve this doctor info
+  			$conn = connectToDB();
+  			if($conn == FALSE)
+  				die('Error connecting to DB');
+  			
+  			$docQuery = $conn->prepare('SELECT * FROM doctor_data WHERE `id`=:docid LIMIT 1');
+  			$docQuery->bindValue(':docid', $user->doctorID());
+  			$docQuery->execute();
+  			$doc = $docQuery->fetch();
+  			if($doc == FALSE)
+  				die('Could not fetch doctor info');
+  			
+  			echo <<<"HTML"
+  			<h1>{$doc['firstname']} {$doc['lastname']}</h1>
+  			<h4>{$doc['phone']}</h4>
+  			<h4>{$doc['hospital']}</h4>
+  			<h4>{$doc['interests']}</h4>
+  			<h4>{$doc['education']}</h4>
+HTML;
+  		?>
   	</div>
     <?php include("../include/body_bottom.php"); ?>
   </body>

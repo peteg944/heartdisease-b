@@ -1,5 +1,6 @@
 <?php
-include('../include/db.php');
+include('../include/users.php');
+$user = new User();
 
 // Patient data is submitted here with POST //
 
@@ -12,7 +13,7 @@ if($conn == FALSE)
 $insertCols = "INSERT INTO patient_data (`doctor_id`, `firstname`, `lastname`, `dob_month`, `dob_day`, `dob_year`, `phone`, `address`, `gender`)";
 $insertVals = "VALUES(:doctor_id, :firstname, :lastname, :dob_month, :dob_day, :dob_year, :phone, :address, :gender)";
 $insertQuery = $conn->prepare($insertCols.' '.$insertVals);
-$insertQuery->bindValue(':doctor_id', $_POST['doctor_id']);
+$insertQuery->bindValue(':doctor_id', $user->doctorID());
 $insertQuery->bindValue(':firstname', $_POST['firstname']);
 $insertQuery->bindValue(':lastname', $_POST['lastname']);
 $insertQuery->bindValue(':dob_month', $_POST['dob_month']);
