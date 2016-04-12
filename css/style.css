@@ -388,3 +388,80 @@ header {
 .col-xs-122{
     width:60%;
 }
+.linktootherwebsite{
+	font-size: 20px;
+}
+.introcontainer{
+	width:1170px;
+	padding-left: 15px;
+	padding-right: 15px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top:30px;
+}
+.left_form{
+	float:left;
+	width:48%;
+}
+.right_form{
+	float:left;
+	width:48%;
+	margin-left:3.8%;
+}
+.contact-form{
+	position:relative;
+	padding-bottom:20px;
+}
+.contact-form div{
+	padding:5px 0;
+}
+.contact-form span label {
+    display: block;
+    font-size: 1em;
+    color: #686868;
+    padding-bottom: 5px;
+    font-weight: 400;
+}
+.contact-form input[type="text"],.contact-form textarea{
+		    padding:10px;
+			display:block;
+			width:100%;
+			background:#FFF0F0;
+			border: none;
+			outline:none;
+			color:#464646;
+			font-size:1em;
+			-webkit-appearance:none;
+  font-weight: 300;
+}
+.contact-form textarea{
+		resize:none;
+		height: 193px;		
+}
+.myButton{
+    background:#84754e;
+	color: #FFF;
+	font-size:1em;
+	padding:10px 25px;
+	border:none;
+	text-decoration: none;
+	outline: 0;
+	-webkit-transition: all 0.3s ease-in-out;
+	-moz-transition: all 0.3s ease-in-out;
+	-o-transition: all 0.3s ease-in-out;
+	transition: all 0.3s ease-in-out;
+    display:inline-block;
+    cursor:pointer;
+    text-transform:uppercase;
+    -webkit-appearance:none;
+    float:right;
+}
+.myButton:hover{
+		background:#a6192e;
+}
+.contactbutton{
+	float:right;
+}
+.linkcolor{
+	color:#DC4D4D
+}

@@ -1,23 +1,17 @@
+<?php
+include('../include/top.php');
+if(!$user->isLoggedIn())
+{
+	header('Location: /html/login-patient.html');
+	die('You need to login first.');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Heart2Heart</title>
-
-    <!-- CSS -->
-    <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <link href="/css/style.css" rel="stylesheet">
-	
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
-      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
-    <![endif]-->
-  </head>
+    <?php include('../include/head.php'); ?>
+	<title>Contact Us - Heart2Heart</title>
+  </head>  
   <body>
     <?php include("../include/nav.php"); ?>
   	<div class="container">
@@ -45,8 +39,40 @@
 			
   		</ul>
   	</div>
-  	</div>
-    <?php include("../include/body_bottom.php"); ?>
+		    <div class="contact_desc">
+		        <div class="container">
+			         <div class="contact-form">
+				  	   <h2>Contact Us</h2>
+					     <form method="post" action="contact-post.html" class="left_form">
+					    	<div>
+						    	<span><label>NAME</label></span>
+						    	<span><input name="userName" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						    	<span><label>E-MAIL</label></span>
+						    	<span><input name="userEmail" type="text" class="textbox"></span>
+						    </div>
+						    <div>
+						     	<span><label>Fax</label></span>
+						    	<span><input name="userPhone" type="text" class="textbox"></span>
+						    </div>
+					    </form>
+					    <form class="right_form">
+					        <div>					    	
+						    	<span><label>SUBJECT</label></span>
+						    	<span><textarea name="userMsg"> </textarea></span>
+						    </div>
+						   <div>
+						   		<a class="contactbutton">
+									<button class="btn btn-primary" type="button"><span class="glyphicon glyphicon-envelope"></span>&nbsp;Submit</button>
+								</a>						  
+							</div>
+					    </form>
+					    <div class="clearfix"></div>
+				  </div>
+	             </div>  
+	          </div>
+  <?php include("../include/body_bottom.php"); ?>
     <script src="/js/dropzone.js"></script>
     <script>
     	// Patients list click
@@ -54,6 +80,5 @@
     		location.href = $(this).attr('href');
     	});
     </script>
-    <?php include("../include/body_bottom.php"); ?>
   </body>
 </html>

@@ -1,3 +1,11 @@
+<?php
+include('../include/top.php');
+if(!$user->isLoggedIn())
+{
+	header('Location: /html/login-patient.html');
+	die('You need to login first.');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -36,7 +44,6 @@
 	  			<div class="col-xs-121 col-s-3 col-md-3">
 					<div class="list-group">
 						<?php
-							include('../include/db.php');
 							
 							// Global data
 							$months = array("January","February","March","April","May","June","July",
@@ -47,7 +54,7 @@
 							if($conn == FALSE)
 								die('Could not connect to the database. Uh oh.\n');
 							
-							$patients = $conn->query('SELECT * FROM patients ORDER BY lastname');
+							$patients = $conn->query('SELECT * FROM patient_data ORDER BY lastname');
 							
 							$patientParam = $_GET['p'];
 							$activePatient = -1;
@@ -63,10 +70,10 @@
 							foreach($patients as $patient)
 							{
 								echo '<a class="list-group-item';
-								if($patient['patient_id'] == $activePatient)
+								if($patient['id'] == $activePatient)
 									echo ' active';
 								echo '" ';
-								echo 'href="?p='.$patient['patient_id'];
+								echo 'href="?p='.$patient['id'];
 								echo '">';
 								
 								echo '	<h4>'.$patient['lastname'].', '.$patient['firstname'].'</h4>';
@@ -156,8 +163,8 @@ HTML;
 							}
 							else if($activePatient >= 0) // Get info for this patient
 							{
-								$patientQuery = $conn->prepare('SELECT * FROM patients WHERE `patient_id`=:patient_id LIMIT 1');
-								$patientQuery->bindValue(':patient_id', $activePatient);
+								$patientQuery = $conn->prepare('SELECT * FROM patient_data WHERE `id`=:id LIMIT 1');
+								$patientQuery->bindValue(':id', $activePatient);
 								$patientQuery->execute();
 								$patient = $patientQuery->fetch(); // Fetch a row (the only row)
 								
@@ -186,14 +193,12 @@ HTML;
 								
 								// Upload / view video results
 								echo <<<"HTML"
-								<div class="row"><!-- upload file -->
-									<div class="col-xs-12 col-s-6 col-md-6">
-										<h4>Upload a DICOM file</h4>
-										<form action="upload.php" class="dropzone" id="imageUpload">
-											<span class="dz-message">Drop DICOM file here!</span>
-										</form>
-									</div>
-								</div>
+					<div class="text-center">
+						<a>
+							<button class="btn btn-primary" type="button"><span class="
+glyphicon glyphicon-envelope"></span>&nbsp;Contact The Doctor</button>
+						</a>
+					</div>
 HTML;
 							}
 						?>

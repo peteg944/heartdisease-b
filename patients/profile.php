@@ -1,3 +1,11 @@
+<?php
+include('../include/top.php');
+if(!$user->isLoggedIn())
+{
+	header('Location: /html/login-patient.html');
+	die('You need to login first.');
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -49,8 +57,7 @@
 	  		<div class="row1">
 					<div class="list-group">
 						<?php
-							include('../include/db.php');
-							
+
 							// Global data
 							$months = array("January","February","March","April","May","June","July",
 											"August","September","October","November","December");
@@ -60,7 +67,7 @@
 							if($conn == FALSE)
 								die('Could not connect to the database. Uh oh.\n');
 							
-							$patients = $conn->query('SELECT * FROM patients ORDER BY lastname');
+							$patients = $conn->query('SELECT * FROM patient_data ORDER BY lastname');
 							
 							$patientParam = $_GET['p'];
 							$activePatient = 2;
@@ -80,8 +87,8 @@ HTML;
 							}
 							else if($activePatient >= 0) // Get info for this patient
 							{
-								$patientQuery = $conn->prepare('SELECT * FROM patients WHERE `patient_id`=:patient_id LIMIT 1');
-								$patientQuery->bindValue(':patient_id', $activePatient);
+								$patientQuery = $conn->prepare('SELECT * FROM patient_data WHERE `id`=:id LIMIT 1');
+								$patientQuery->bindValue(':id', $activePatient);
 								$patientQuery->execute();
 								$patient = $patientQuery->fetch(); // Fetch a row (the only row)
 								
@@ -126,7 +133,7 @@ HTML;
 			</div> <!-- end row -->
 		</div>
   	</div>
-    <?php include("../include/body_bottom.php"); ?>
+     <?php include("../include/body_bottom.php"); ?>
     <script src="/js/dropzone.js"></script>
     <script>
     	// Patients list click
@@ -134,6 +141,5 @@ HTML;
     		location.href = $(this).attr('href');
     	});
     </script>
-    <?php include("../include/body_bottom.php"); ?>
   </body>
 </html>
