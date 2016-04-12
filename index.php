@@ -22,7 +22,7 @@
 					</a>
 				</div>
 				<div class="col-xs-12 col-md-4">
-					<a href="/patient.php" class="jumpoff-link">
+					<a href="/patients/profile.php" class="jumpoff-link">
 						<p><span class="glyphicon glyphicon-user" aria-hidden="true"></span>&nbsp;Patients &raquo;</p>
 					</a>
 				</div>
