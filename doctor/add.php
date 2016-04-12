@@ -25,7 +25,7 @@ $insertQuery->bindValue(':gender', $_POST['gender']);
 // Run the INSERT
 $insertQuery->execute();
 $insertedRow = $insertQuery->fetch();
-error_log($insertedRow);
+//error_log($insertedRow);
 
 // Go to doctor page
 header('Location: /doctor/');

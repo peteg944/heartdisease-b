@@ -30,13 +30,30 @@
 							echo '<ul class="dropdown-menu">';
 							echo '<li><a href="/logout.php">Log out</a></li>';
 							echo '</ul>';
+							
 							echo '</li>';
 						}
 						else
 						{
+							// Sign up
+							echo '<li class="dropdown">';
+							echo '<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">';
+							echo 'Sign up&nbsp;<span class="caret"></span>';
+							echo '</a>';
+							
+							// Sign up contents
+							echo '<ul class="dropdown-menu">';
+							echo '<li><a href="/html/reg-doctor.php">&hellip;as a doctor</a></li>';
+							echo '<li><a href="/html/reg.html">&hellip;as a patient</a></li>';
+							echo '</ul>';
+							
+							echo '</li>';
+							
+							// Login
 							echo '<li>';
 							echo '<a href="/html/login.html">Log in</a>';
 							echo '</li>';
+							
 							/*echo 'Log in&#8230; <span class="caret"></span>';
 							echo '</a>';
 							
